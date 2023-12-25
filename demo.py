@@ -96,6 +96,11 @@ from methods import enum
 print("\n\n######## enum():",enum.__doc__)
 enum()
 
+# Better List
+from methods import better_list
+print("\n\n######## enum():",better_list.__doc__)
+better_list()
+
 # Built In Functions
 from methods import builtins
 print("\n\n######## builtins():",builtins.__doc__)
@@ -145,25 +150,11 @@ def template():
 print("\n\n######## template():",template.__doc__)
 template()
 
-
-num_list = [3, 6, 7, 3, 5, 4, 6, 2, 8, 9, 7, 5, 8, 5, 0]
-print(f'{num_list}\n')
-def remove_duplicates_from_list(the_list):
-    for index, num in enumerate(the_list):
-        if num in the_list[:index]:
-          the_list.pop(index)   
-    return
-remove_duplicates_from_list(num_list)
-print(f'no duplicates: {num_list}')
-sorted_list = sorted(num_list)
-print(f'sorted: {sorted_list}\n')
-
-the_list = [3, 6, 7, 3, 5, 4, 1, 6, 2, 8, 9, 7, 5, 8, 5, 0]
+# Sorting and Removing Duplicates from a List
+## Comprehension, Enumerate, Slicing
+the_list = [3, 6, 7, 3, 5, 4, 1, 7, 6, 2]
 print(f'the_list: {the_list}')
-def doub (num): return num*2 
-better_list = sorted([str(value)
-                      for index, value in enumerate(the_list)  
-                      if value not in the_list[:index]])
+better_list = sorted([value for index, value in enumerate(the_list) if value not in the_list[:index]])
 print(f'better_list: {better_list}')
 
 # Wrapper Lambda
