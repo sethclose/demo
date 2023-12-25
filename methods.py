@@ -146,6 +146,19 @@ def enum():
           + str({key: value for key, value in list(enumerate('abcdefgh'))}))
     return
 
+
+# Sorting and Removing Duplicates from a List
+def better_list():
+    """
+    Functional example of Comprehension with Enumeration and Slicing
+    """
+    the_list = [3, 6, 7, 3, 5, 4, 1, 7, 6, 2]
+    print(f'the_list: {the_list}')
+    print(r'better_list = sorted([value for index, value in enumerate(the_list)')
+    print(r'                                 if value not in the_list[:index]])')
+    better_list = sorted([value for index, value in enumerate(the_list) if value not in the_list[:index]])
+    print(f'better_list: {better_list}')
+
 # Built In Functions
 def builtins():
     """
@@ -191,6 +204,14 @@ def wrappings():
     print('square("3") = ' + str(square("3")))
     
     return
+    
+    # Wrapper Lambda
+    def arg_to_string(func):
+        return lambda value: func(str(value))
+    @arg_to_string
+    def yell_number(value):
+        print("!!! " + value + " !!!")
+    yell_number(4)
 
 # Variadic Functions and Calls
 def variadics():
