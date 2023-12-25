@@ -185,16 +185,8 @@ def wrappings():
         return wrapped
     def add1(x): return x+1
     add1 = convert_arg_to_int(add1)
-    print(
-    """def convert_arg_to_int(func):
-        def wrapped(x):
-            x_as_int = int(x)
-            return func(x_as_int)
-        return wrapped
-    def add1(x): return x+1
-    add1 = convert_arg_to_int(add1)    """)
-    add1("3")
     print('add1("3") = ' + str(add1("3")))
+    
     # Decorator
     @convert_arg_to_int
     def square(x): return x*x
@@ -203,15 +195,17 @@ def wrappings():
     def square(x): return x*x    """)
     print('square("3") = ' + str(square("3")))
     
-    return
-    
     # Wrapper Lambda
+    print('\nWrapper Lambda')
+    print(r'def arg_to_string(func):  return lambda value: func(str(value))')
     def arg_to_string(func):
         return lambda value: func(str(value))
-    @arg_to_string
+    @arg_to_string 
     def yell_number(value):
-        print("!!! " + value + " !!!")
-    yell_number(4)
+        return "!!! " + value + " !!!"
+    print(f'yell_number(4):  {yell_number(4)}')
+
+    return
 
 # Variadic Functions and Calls
 def variadics():
