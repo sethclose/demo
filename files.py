@@ -6,7 +6,7 @@ def files():
     filename = "textfile.txt"
 
     # Open the file to Read print a few lines
-    file = open("/home/sethclose/Python-3.12.0/Python/"+filename, "r")
+    file = open("/home/sethclose/python/"+filename, "r")
     linecount = 0
     for line in file:
         print("   " + line)
@@ -16,11 +16,11 @@ def files():
     file.close()
 
     # Open the file to Write (this erases)
-    file = open("/home/sethclose/Python-3.12.0/Python/"+filename, "w")
+    file = open("./"+filename, "w")
     file.close()
 
     # Open the file to Append
-    file = open("/home/sethclose/Python-3.12.0/Python/"+filename, "a")
+    file = open("./"+filename, "a")
     file_text = ""
     for x in range(1,4):
         file_text = file_text + str(x) + ")  This got added by files.py, called by demo.py.\r"
