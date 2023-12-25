@@ -98,7 +98,7 @@ enum()
 
 # Better List
 from methods import better_list
-print("\n\n######## enum():",better_list.__doc__)
+print("\n\n######## better_list():",better_list.__doc__)
 better_list()
 
 # Built In Functions
@@ -149,21 +149,6 @@ def template():
     return
 print("\n\n######## template():",template.__doc__)
 template()
-
-# Sorting and Removing Duplicates from a List
-## Comprehension, Enumerate, Slicing
-the_list = [3, 6, 7, 3, 5, 4, 1, 7, 6, 2]
-print(f'the_list: {the_list}')
-better_list = sorted([value for index, value in enumerate(the_list) if value not in the_list[:index]])
-print(f'better_list: {better_list}')
-
-# Wrapper Lambda
-def arg_to_string(func):
-    return lambda value: func(str(value))
-@arg_to_string
-def yell_number(value):
-    print("!!! " + value + " !!!")
-yell_number(4)
 
 
 
